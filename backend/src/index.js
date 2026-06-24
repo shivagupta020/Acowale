@@ -152,7 +152,7 @@ app.use((error, req, res, next) => {
     message: status === 500 ? "An unexpected server error occurred" : error.message,
   });
 });
-
+const PORT = process.env.PORT || config.port || 5000;
 if (require.main === module) {
   app.listen(PORT, () => {
   logger.info("server.started", {
