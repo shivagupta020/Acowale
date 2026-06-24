@@ -154,9 +154,12 @@ app.use((error, req, res, next) => {
 });
 
 if (require.main === module) {
-  app.listen(config.port, () => {
-    logger.info("server.started", { port: config.port, environment: config.nodeEnv });
+  app.listen(PORT, () => {
+  logger.info("server.started", {
+    port: PORT,
+    environment: config.nodeEnv,
   });
+});
 }
 
 module.exports = app;
